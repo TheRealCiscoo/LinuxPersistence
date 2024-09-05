@@ -1,4 +1,4 @@
-# Ganado Persistencia en Linux
+# Obteniendo Persistencia en Linux
 ## Malicious SSH Key [ *con credenciales* ]
 ### Generación de par de claves
 ```bash
