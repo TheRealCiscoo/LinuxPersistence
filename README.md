@@ -2,7 +2,7 @@
 ## Malicious SSH Key [ *con credenciales* ]
 ### Generación de par de claves
 ```bash
-**ssh-keygen** -t rsa -b 4096
+*ssh-keygen* -t rsa -b 4096
 
 *# En caso de que se solicite una contraseña tenemos la opción de dejarlo en blanco*
 ```
